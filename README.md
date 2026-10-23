@@ -1,5 +1,11 @@
 # Persian Sentiment Analysis using Bidirectional LSTM
 
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?style=flat-square&logo=keras&logoColor=white)
+![Hazm](https://img.shields.io/badge/NLP-Persian%20%2F%20Hazm-green?style=flat-square)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
+
 An end-to-end Natural Language Processing (NLP) project for binary sentiment classification of Persian text using Deep Learning. This project analyzes Persian product reviews collected from Digikala and classifies them into **Positive** or **Negative** sentiments using a Bidirectional LSTM neural network.
 
 ---
@@ -125,17 +131,18 @@ Evaluation metrics include:
 ```text
 persian-sentiment-analysis/
 │
+├── src/
+│   └── persian-sentiment-analysis.py   # runnable script (runs from repo root)
+│
 ├── notebook/
-│   └── Persian_Sentiment_Analysis.ipynb
+│   └── persian-sentiment-analysis.ipynb
 │
 ├── dataset/
-│   └── comment.csv
+│   ├── comment.csv
 │   └── stopwords.txt
 │
-├── images/
-│
 ├── requirements.txt
-│
+├── LICENSE
 └── README.md
 ```
 
@@ -144,7 +151,7 @@ persian-sentiment-analysis/
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/persian-sentiment-analysis.git
+git clone https://github.com/mohammad-abbasi-sh/persian-sentiment-analysis.git
 
 cd persian-sentiment-analysis
 
@@ -155,7 +162,14 @@ pip install -r requirements.txt
 
 ## Usage
 
-Open the notebook and execute the cells sequentially.
+Run the script from the repo root (it reads `dataset/comment.csv` and
+`dataset/stopwords.txt` from this repository — no Google Drive needed):
+
+```bash
+python src/persian-sentiment-analysis.py
+```
+
+Or open the notebook in `notebook/` and execute the cells sequentially.
 
 The project supports:
 
