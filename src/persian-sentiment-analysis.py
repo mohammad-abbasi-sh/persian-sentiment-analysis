@@ -6,15 +6,15 @@ An end-to-end NLP project for binary sentiment classification of Persian
 product reviews using TensorFlow/Keras, Word2Vec, and Hazm.
 
 Author: Mohammad Abbasi
-GitHub: https://github.com/shahkooh/persian-sentiment-analysis
+GitHub: https://github.com/mohammad-abbasi-sh/persian-sentiment-analysis
 """
 
-from google.colab import drive
-drive.mount('/content/drive/')
+# Runs locally from the repo root: the dataset lives in dataset/ (see README).
+# (This file started as a Colab export; the drive mount and the notebook
+# pip-install line were removed so it runs as a plain script.)
 
 """**For Persian language processing in Python**"""
 
-!pip install hazm
 
 # Commented out IPython magic to ensure Python compatibility.
 # hazm
@@ -86,7 +86,7 @@ use_save_model = True
 
 """**Load Dataset**"""
 
-df = pd.read_csv("/content/drive/My Drive/comment.csv",encoding =DATASET_ENCODING, names=DATASET_COLUMNS, header=0)
+df = pd.read_csv("dataset/comment.csv",encoding =DATASET_ENCODING, names=DATASET_COLUMNS, header=0)
 
 """Convert integer target to 'POSITIVE' and 'NEGATIVE'"""
 
@@ -140,7 +140,7 @@ import io
 
 # read stopwords list
 stopwords = []
-filepath = "/content/drive/My Drive/stopwords.txt"
+filepath = "dataset/stopwords.txt"
 with open(filepath, 'r') as f:
     for line in f:
       stopwords.append(line.strip())
@@ -259,7 +259,7 @@ df_train.head(20)
 """**example for dummies**"""
 
 s = pd.Series(list('abca'))
- pd.get_dummies(s)
+pd.get_dummies(s)
 
 print("x_train", x_train.shape)
 print("y_train", y_train.shape)
