@@ -1,5 +1,7 @@
 # Persian Sentiment Analysis using Bidirectional LSTM
 
+[🇮🇷 توضیحات فارسی](README-fa.md)
+
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
 ![Keras](https://img.shields.io/badge/Keras-D00000?style=flat-square&logo=keras&logoColor=white)
