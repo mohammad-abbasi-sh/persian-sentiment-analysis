@@ -64,9 +64,6 @@ DATASET_COLUMNS = ['target','text','rate','cat','type','product_id']
 DATASET_ENCODING = "UTF-8"
 TRAIN_SIZE = 0.8
 
-# TEXT CLENAING
-TEXT_CLEANING_RE = r"[^آ-ی]"
-
 # WORD2VEC 
 W2V_SIZE = 100
 W2V_WINDOW = 5
@@ -112,39 +109,10 @@ plt.show()
 
 """**text pre_processing**"""
 
-import io
-
-# read stopwords list
-stopwords = []
-filepath = "dataset/stopwords.txt"
-with open(filepath, 'r') as f:
-    for line in f:
-      stopwords.append(line.strip())
-
-"""**stop words and normalizer**"""
-
-normalizer = Normalizer()
-stemmer = Stemmer()
-def preprocess(text, stem=False):
-    text = text.replace('.', ' ')
-    text = text.replace('ي', 'ی').replace('ك', 'ک')
-    text = text.replace("-","")
-    text = text.replace('(', ' ')
-    text = text.replace(')', ' ')
-    text = text.replace("«"," ")
-    text = text.replace("»"," ")
-    text = normalizer.normalize(text)
-    text = re.sub(TEXT_CLEANING_RE, ' ', str(text)).strip() # remove all character except farsi character
-    
-    tokens = []
-    # for token in text.split():
-    for token in word_tokenize(text):
-        if token not in stopwords:
-            if stem:
-                tokens.append(stemmer.stem(token))
-            else:
-                tokens.append(token)
-    return " ".join(tokens)
+# Cleaning logic lives in src/preprocess.py (importable + unit-tested in
+# tests/test_preprocess.py); the script's own directory is on sys.path
+# when run as a script, so this import works from the repo root.
+from preprocess import preprocess
 
 df.text = df.text.apply(lambda x: preprocess(x))
 
