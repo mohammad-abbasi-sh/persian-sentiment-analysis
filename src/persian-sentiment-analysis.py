@@ -36,13 +36,13 @@ from sklearn.metrics import confusion_matrix, classification_report, accuracy_sc
 
 
 # Keras
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-from keras.models import Sequential
-from keras.layers import Activation, Dense, Dropout, Embedding, Flatten , MaxPooling1D, LSTM, SpatialDropout1D,GlobalMaxPool1D,Bidirectional
-from keras import utils
-from keras.callbacks import ReduceLROnPlateau, EarlyStopping , ModelCheckpoint
-from keras.models import load_model
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Activation, Dense, Dropout, Embedding, Flatten , MaxPooling1D, LSTM, SpatialDropout1D,GlobalMaxPool1D,Bidirectional
+from tensorflow.keras import utils
+from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping , ModelCheckpoint
+from tensorflow.keras.models import load_model
 
 
 # Word2vec
